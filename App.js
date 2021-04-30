@@ -49,10 +49,10 @@ export default function App() {
 		playNote(userNote);
     if (userNote === computernote) {
       setIsVictory('WIN');
-      setTimeout(function(){ cancelHandler() }, 1000);
+      setTimeout(function(){ cancelHandler() }, 2000);
     } else {
       setIsVictory('LOSE');
-      setTimeout(function(){ cancelHandler() }, 1000);
+      setTimeout(function(){ cancelHandler() }, 2000);
 
     }
 	}
@@ -106,7 +106,7 @@ export default function App() {
 		<View style={styles.container}>
 			<View style={{ height: '40%', justifyContent: 'center', alignItems: 'center'}}>
         {started ? (
-          typeof isVictory !== 'EARLY' 
+          isVictory === 'EARLY' 
           ? <Text style={{ fontSize: 24, color: 'darkslategrey' }}>Find the correct note</Text>
           : isVictory === 'WIN'
             ? <Text style={{ fontSize: 24, color: 'darkslategrey' }}>Yay !</Text>
